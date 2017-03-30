@@ -7,6 +7,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'spec_helper'
 require 'rspec/rails'
 
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+
 # configure shoulda matchers to use rspec as the test framework and full matcher libraries for rails
 Shoulda::Matchers.configure do |config|
   config.integrate do |with|
@@ -43,6 +45,8 @@ RSpec.configure do |config|
       example.run
     end
   end
+
+  config.include RequestSpecHelper, type: :request
 
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
