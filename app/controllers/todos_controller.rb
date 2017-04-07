@@ -4,7 +4,29 @@ class TodosController < ApplicationController
   # GET /todos
   def index
     @todos = Todo.all
-    json_response(@todos)
+    #json_response(@todos)
+    
+    todo_arr = []
+    @todos.each do |todo| 
+      items_arr = []
+
+      items = todo.items
+      items.each do |item|
+        items_arr.push({
+          id: item.id,
+          name: item.name,
+          done: item.done
+          })
+      end
+
+      todo_arr.push({
+        id: todo.id,
+        title: todo.title,
+        items: items_arr
+        })
+    end 
+
+    render json: {todo: todo_arr,status: 200}
   end
 
   # POST /todos
