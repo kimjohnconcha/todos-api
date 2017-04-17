@@ -16,7 +16,10 @@ gem 'puma', '~> 3.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'jwt'
+
 
 ruby '2.3.0'
 
@@ -49,13 +52,6 @@ group :test do
   gem 'faker'
   gem 'database_cleaner'
 end
-
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
-
-
 
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
