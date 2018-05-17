@@ -9,6 +9,11 @@ class UsersController < ApplicationController
     json_response(response, :created)
   end
 
+  def fetch_users
+
+
+  end
+
 
   private
 
