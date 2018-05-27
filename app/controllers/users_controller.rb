@@ -10,8 +10,7 @@ class UsersController < ApplicationController
   end
 
   def fetch_users
-
-
+    
   end
 
 

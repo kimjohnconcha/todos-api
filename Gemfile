@@ -20,8 +20,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'jwt'
 
+gem 'twilio-ruby'
 
-ruby '2.3.0'
+ruby '2.3.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
